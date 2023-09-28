@@ -100,6 +100,7 @@ bidding_project/
 │   └── loginCred3.sqlite
 └── README.md
 
+##
 
 ![Hacker Image](https://img.freepik.com/free-vector/hacker-operating-laptop-cartoon-icon-illustration-technology-icon-concept-isolated-flat-cartoon-style_138676-2387.jpg?w=360)
 
