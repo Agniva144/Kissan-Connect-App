@@ -1,4 +1,5 @@
-![Farming Image]([URL_of_the_image](https://dynamics.folio3.com/blog/wp-content/uploads/2021/07/shutterstock_1927630643.jpg)
+![Farming Image](https://dynamics.folio3.com/blog/wp-content/uploads/2021/07/shutterstock_1927630643.jpg)
+
 
 # Bidding System
 
