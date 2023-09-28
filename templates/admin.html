@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Admin Panel</title>
+    
+</head>
+<body>
+    {% include "header.html" %}
+
+
+  <!-- Display biddingTime and startBid status -->
+<div class="container mt-4" style="margin-bottom: 4rem; max-width: 500px;">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="font-weight-bold">Bidding Time: {{ biddingTime }}</p>
+            <p class="font-weight-bold">Bid Duration {{ bid_duration }} mins</p>
+        </div>
+    </div>
+
+    <!-- Form to set bidding time -->
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="/set_bidding_time" class="mb-3">
+                <div class="form-group">
+                    <label for="biddingTime">Set Bidding Time :</label>
+                    <input type="text" id="biddingTime" name="biddingTime" class="form-control" placeholder="Enter bidding time" value="{{ biddingTime }}">
+                    
+                    <label for="biddingTime">Set Bid Duration(in mins) :</label>
+                    <input type="number" id="bid_duration" name="bid_duration" class="form-control" placeholder="Enter bidding Duration" value="{{ bid_duration }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Set Bidding</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Form to toggle the bid -->
+<div class="row">
+    <div class="col-md-6">
+        <p class="font-weight-bold">Start Bid Status: {{ startBid }}</p>
+        <form method="post" action="/toggle_bid">
+            {% if startBid %}
+                <button type="submit" class="btn btn-danger">Stop Bid</button>
+            {% else %}
+                <button type="submit" class="btn btn-success">Start Bid</button>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+
+    <!-- Display the vegetables list -->
+    <div class="row mt-6" style="margin-top: 2rem;">
+        <div class="col-md-8">
+            <h2 class="font-weight-bold">Vegetables List:</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Quantity (kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for veg in vegetables %}
+                        <tr>
+                            <td>{{ veg['username'] }}</td>
+                            <td>{{ veg['name'] }}</td>
+                            <td>{{ veg['quantity'] }} kg</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <td></td>
+                <td></td>
+                <td></td>
+            </table>
+
+            <!-- Display selected items as a table -->
+            <h2 class="font-weight-bold">Selected Items:</h2>
+        <!-- <h2 class="mt-4">Selected Items:</h2> -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Quantity (kg)</th>
+                    <th>Price (/kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in selected_items %}
+                    <tr>
+                        <td>{{ item['username'] }}</td>
+                        <td>{{ item['name'] }}</td>
+                        <td>{{ item['quantity'] }}</td>
+                        <td>₹ {{ item['price'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          
+        </table>
+        </div>
+    </div>
+
+
+
+
+
+    
+    
+    
+</div>
+
+
+    <!-- Footer -->
+    {% include "footer.html" %}
+</body>
+</html>

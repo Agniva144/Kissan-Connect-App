@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bid Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    {% include "header.html" %}
+
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <form style="width: 50%;">
+            <h1>Next Bidding Details :</h1>
+            <!-- Display bid_duration and biddingTime as input fields -->
+            <div class="form-group">
+                <label for="bid_duration">Bid Duration:</label>
+                <input type="text" id="bid_duration" class="form-control" value="{{ bid_duration }} mins" readonly>
+            </div>
+            <div class="form-group">
+                <label for="biddingTime">Bidding Time:</label>
+                <input type="text" id="biddingTime" class="form-control" value="{{ biddingTime }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="startBidStatus">Bidding Status:</label>
+                <input type="text" id="startBidStatus" class="form-control {% if startBid %}text-danger{% endif %}" value="{% if startBid %}Bidding Active{% else %}Bidding Not Active{% endif %}" readonly>
+            </div>
+    
+            <h2>Selected Items:</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Quantity (kg)</th>
+                        <th>Price per kg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in selected_items %}
+                    <tr>
+                        <td style="background-color: white;">{{ item['username'] }}</td>
+                        <td style="background-color: white;">{{ item['name'] }}</td>
+                        <td style="background-color: white;">{{ item['quantity'] }}</td>
+                        <td style="background-color: white;">₹ {{ item['price'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+
+    <!-- Footer -->
+    {% include "footer.html" %}
+
+    <!-- Include Bootstrap JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
