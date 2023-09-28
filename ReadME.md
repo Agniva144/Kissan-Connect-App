@@ -83,23 +83,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [Flask](https://flask.palletsprojects.com/en/2.1.x/) - The web framework used
 - [SQLite](https://www.sqlite.org/index.html) - The database engine used
 
-## Directory Structure
-bidding_project/
-├── app.py
-├── templates/
-│   ├── home.html
-│   ├── login.html
-│   ├── signup.html
-│   ├── farmer.html
-│   ├── retailer.html
-│   ├── admin.html
-│   ├── bid_Details.html
-│   ├── admin_check.html
-│   ├── about.html
-├── Bidding2/
-│   └── loginCred3.sqlite
-└── README.md
-
 
 ## Contact
 
