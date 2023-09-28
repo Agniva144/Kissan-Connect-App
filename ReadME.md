@@ -1,9 +1,8 @@
-![Farming Image](https://dynamics.folio3.com/blog/wp-content/uploads/2021/07/shutterstock_1927630643.jpg)
-
-
 # Bidding System
 
 This is a web-based bidding system built using Python and Flask. It allows farmers to list vegetables for sale, retailers to place bids on those vegetables, and administrators to manage the bidding process.
+
+![Farming Image](https://dynamics.folio3.com/blog/wp-content/uploads/2021/07/shutterstock_1927630643.jpg)
 
 ## Features
 
